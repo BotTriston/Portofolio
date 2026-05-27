@@ -31,7 +31,34 @@ function App() {
   };
   // -------------------------
 
+  useEffect(() => {
+    const isReload =
+      performance.getEntriesByType("navigation")[0]?.type === "reload";
 
+    if (isReload) {
+      // Ambil path tanpa hash
+      const baseUrl = window.location.origin + "/";
+      window.location.replace(baseUrl);
+    }
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (aboutRef.current) {
+      observer.observe(aboutRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <>
