@@ -31,24 +31,7 @@ function App() {
   };
   // -------------------------
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.2 }
-    );
-
-    if (aboutRef.current) {
-      observer.observe(aboutRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
+ 
   return (
     <>
       <div className="absolute top-0 left-0 w-full h-full -z-10 ">
