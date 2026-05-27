@@ -14,6 +14,7 @@ import AOS from 'aos';
 import ChatRoom from "./components/ChatRoom";
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 // ..
+import ProfessionalPicture from "/assets/Professional-picture.jpg";
 AOS.init();
 
 function App() {
@@ -75,7 +76,7 @@ function App() {
         <div className="hero grid md:grid-cols-2 items-center pt-10 xl:gap-0 gap-6 grid-cols-1">
           <div className="animate__animated animate__fadeInUp animate__delay-3s">
             <div className="flex items-center gap-3 mb-6 bg bg-zinc-800 w-fit p-4 rounded-2xl">
-              <img src="./assets/Professional picture.jpg" className="w-10 rounded-md" />
+             <img src={ProfessionalPicture} className="w-10 rounded-md" />
               <q>Progress is built through patience, discipline, and continuous learning.</q>
             </div>
             <h1 className="text-5xl font-bold mb-6">
@@ -110,7 +111,7 @@ function App() {
               handle="tris_weak"
               status="Online"
               contactText="Contact Me"
-              avatarUrl="./assets/Professional picture.jpg"
+              avatarUrl={ProfessionalPicture}
               showUserInfo={true}
               enableTilt={true}
               enableMobileTilt={false}
