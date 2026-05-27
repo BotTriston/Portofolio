@@ -1,15 +1,16 @@
 {
   "name": "portofolio",
+  "homepage": "https://rissss21.github.io/portofolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && copy dist\\index.html dist\\404.html",
+    "lint": "eslint .",
     "preview": "vite preview",
-    "lint": "eslint ."
+    "deploy": "gh-pages -d dist"
   },
-  
   "dependencies": {
     "@react-three/drei": "^10.6.1",
     "@react-three/fiber": "^9.3.0",
